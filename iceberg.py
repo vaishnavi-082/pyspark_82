@@ -1,11 +1,4 @@
-import subprocess
-import sys
-
-try:
-    import pygit2
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "pygit2"])
-    import pygit2
+pip install pygit2
 
 
 from pyspark.sql import SparkSession
