@@ -1,5 +1,3 @@
-pip install pygit2
-
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit, sha2, concat_ws, coalesce
