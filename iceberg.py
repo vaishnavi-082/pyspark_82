@@ -1,9 +1,20 @@
+import subprocess
+import sys
+
+try:
+    import pygit2
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pygit2"])
+    import pygit2
+
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit, sha2, concat_ws, coalesce
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Table, TableStyle, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
+
 
 def main():
     # Initialize Spark session
